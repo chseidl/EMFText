@@ -58,7 +58,7 @@ public class AdapterFactoryGenerator extends UIJavaBaseGenerator<ArtifactParamet
 	}
 
 	private void addGetAdapterMethod(JavaComposite sc) {
-		sc.add("@SuppressWarnings(\"rawtypes\")");
+		sc.add("@SuppressWarnings({ \"rawtypes\", \"unchecked\" })");
 		sc.add("public Object getAdapter(Object adaptableObject, Class adapterType) {");
 		sc.add("if (adaptableObject instanceof " + I_TEXT_EDITOR(sc) + ") {");
 		sc.add(I_TEXT_EDITOR(sc) + " editorPart = (" + I_TEXT_EDITOR(sc) + ") adaptableObject;");
@@ -144,7 +144,7 @@ public class AdapterFactoryGenerator extends UIJavaBaseGenerator<ArtifactParamet
 	}
 
 	private void addGetAdapterListMethod(JavaComposite sc) {
-		sc.add("@SuppressWarnings(\"rawtypes\")");
+		sc.add("@SuppressWarnings({ \"rawtypes\", \"unchecked\" })");
 		sc.add("public Class[] getAdapterList() {");
 		sc.add("return new Class[] {" + I_TOGGLE_BREAKPOINTS_TARGET(sc) + ".class};");
 		sc.add("}");

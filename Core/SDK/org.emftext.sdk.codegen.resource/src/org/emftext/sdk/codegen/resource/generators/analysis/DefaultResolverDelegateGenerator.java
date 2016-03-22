@@ -150,7 +150,7 @@ public class DefaultResolverDelegateGenerator extends JavaBaseGenerator<Artifact
 		// deprecated method, but ignore the warning. So the code does also run
 		// against older versions. Once the method is completely removed from
 		// EMF, we must adjust this generator.
-		if (!targetEMFVersionIsLowerThan2_9) {
+		if (targetEMFVersionIsLowerThan2_9) {
 			sc.add("@SuppressWarnings(\"deprecation\")");
 		}
 		sc.add("final " + MAP(sc) + "<String, " + URI(sc) + "> packageNsURIToGenModelLocationMap = " + ECORE_PLUGIN(sc) + ".getEPackageNsURIToGenModelLocationMap();");
